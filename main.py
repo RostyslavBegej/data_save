@@ -47,13 +47,13 @@ def start():
     user = input("\nDo you want to change information? (y/n): ")
 
     if user.lower() == "y":
-        print(change_data())
+        change_data()
         i = True
         while i:
             change = input("Do you want to change anything else? (y/n):")
 
             if change.lower() == "y":
-                print(change_data())
+                change_data()
             else:
                 i = False
     elif user.lower() == "n":
@@ -71,9 +71,10 @@ def start():
             file.write(f"Number: {lists[4]}\n")
             file.close()
         print("Data saved to file!")
+        input()
     else:
         print("Data was not saved!")
-
+        input()
 
 bot = input("Have you used this program? (y/n): ")
 if bot.lower() == "y":
@@ -91,9 +92,9 @@ if bot.lower() == "y":
         del bot
         bot = input("Do you want to enter your data again? (y/n):")
         if bot == "y":
-            print(start())
+            start()
         elif bot == "n":
             print("Your data remained saved in the same file!")
             input("Press Enter to close the program...")
 elif bot.lower() == "n":
-    print(start())
+    start()
